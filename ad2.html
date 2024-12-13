@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>UE Online Application for Admission</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+        }
+        .navbar {
+            background-color: #11151a;
+        }
+        .navbar-brand, .nav-link {
+            color: white;
+        }
+        .header-img {
+            width: 80%;
+            max-height: 200px;
+            object-fit: cover;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .form-container {
+            max-width: 850px;
+            width: 100%;
+        }
+        .card {
+            margin-top: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .btn-next {
+            background-color: #dc3545;
+            color: white;
+        }
+        .nav-tabs .nav-link {
+            color: #1c0202; /* Ensure all tabs have a dark text color */
+        }
+        .nav-tabs .nav-link.active {
+            color: #fff; /* Active tab with white text */
+            background-color: #343a40; /* Active tab with dark background */
+        }
+        .application-link {
+            margin-top: 10px;
+            margin-left: 970px;
+        }
+        .form-group {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            width: 200px; /* Adjust the width as needed */
+            margin-right: 10px;
+        }
+        .form-group input, .form-group select {
+            flex: 1;
+            padding: 5px;
+        }
+        .form-row {
+            display: flex;
+            gap: 10px; /* Adjust as needed */
+        }
+        .form-control {
+            width: 296px;
+        }
+        .popup {
+            width: 750px;
+            padding: 30px 20px;
+            position: absolute;
+            left: 50%;
+            top: 30%;
+            transform: translate(-50%, -50%);
+            border-radius: 2px;
+            background-color: #f8f9fa;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 1000; /* Ensure it appears above other content */
+            display: none; /* Initially hidden */
+        }
+        .popup button {
+            display: block;
+            margin: 0 0 20px auto;
+        }
+        .popup p {
+            text-align: justify;
+        }
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+            z-index: 999; /* Below the popup */
+            display: none; /* Initially hidden */
+        }
+        .data-privacy-heading {
+            background-color: black;
+            color: white; /* Set text color to white */
+            padding: 10px; 
+            border-radius: 2px; 
+        }
+        .button-container {
+            display: flex; /* Use flexbox for alignment */
+            justify-content: space-between; 
+            margin-top: 20px; 
+        }
+        .welcome{
+            background-color: #ebedf3; 
+            padding: 20px; 
+            margin: 10px 80px; 
+            border-radius: 5px;
+        }
+        .end {
+            text-align: center; /* Center the buttons */
+            margin-top: 20px; /* Add some margin above the buttons */
+        }
+        .btn-info{
+            padding: 10px 10px;
+        }
+        a{
+            text-decoration: none;
+            color:white;
+        }
+    </style>
+</head>
+<body>
+    <div class="overlay" id="overlay"></div>
+    <div class="popup" id="popup">
+        <span class="data-privacy-heading">Data Privacy Consent</span>
+        <p><b><br>Dear student or parent/guardian:</b>
+        <br><br>Kindly be advised that the University of the East collects basic personal information of all its students for determining eligibility for admission, consideration for scholarship and enrollment.
+        <br><br>Once enrolled, all collected information will become part of the student’s permanent record, which will be retained by the University indefinitely.
+        <br><br>Note:
+        <ul>
+            <li>The personal information of the applicants will be retained by UE for 
+                one school year, 
+                after which they will be permanently disposed of.</li>
+            <li>For applicants who are below 18 years old, a 
+                parent or guardian's consent will be required upon enrollment.
+            </li>
+        </ul>
+    </p>
+    <div class="button-container">
+        <button id="close" class="btn btn-primary">I Agree (student age 18 and up)</button>
+        <button id="close" class="btn btn-danger">I Agree (parent/guardian)</button>
+    </div>
+    </div>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">University of the East</a>
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#">Courses</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Assessment Dates</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Admissions</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Header Image -->
+    <div class="container-fluid p-0">
+        <img src="ue3.jpg" alt="Header Image" class="header-img">
+    </div>
+
+    <!-- Navigation Tabs -->
+    <div class="container mt-3">
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+                <a class="nav-link active" href="#">Welcome</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="ad3.html">Applicant</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-dark" href="#">Contact Info</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-dark" href="#">Previous School</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-dark" href="#">Confirmation</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-dark" href="#">Submit</a>
+            </li>
+        </ul>
+    </div><br><br>
+    <div class="welcome">
+        <h4>Welcome to the UE Online Application for Admission!</h4>
+        <p>To proceed with your application, please do the following:<br>
+            <ol>
+                <li>Be ready to upload your 2" x 2" photo with white background and any of the following:</li>
+                <ul>
+                    <li>For Grade 12 graduates: Grade 12 report card</li>
+                    <li>For graduates of Non-Formal Education: PEPT/ALS rating</li>
+                    <li>For current Grade 12 students: Grade 11 report card</li>
+                    <li>For college transferees: Transcript of records or Certification of grades</li>
+                    <li>For degree holders: Transcript of records</li>
+                    <li>For cross-enrollees: Permit to cross-enroll</li>
+                </ul>
+                <li>Review all the information that you entered in the application form before clicking the Submit button.</li>
+                <li>Make sure to COPY/TAKE A SCREENSHOT of your reference number. You will use this later on.</li>
+            </ol>
+        </p>
+    </div>
+    <div class="end">
+        <button class="btn btn-danger" style="margin-right:70%;"><a href="ad3.html">
+            Next</a></button>
+        <button class="btn btn-info text-white">Cancel</button>
+    </div>
+    
+    <script src="script.js" async defer></script>
+</body>
+</html>
