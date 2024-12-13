@@ -1,0 +1,281 @@
+body {
+    background: url(pic.jpg); 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif !important;
+}
+
+#loginpanel {
+    opacity: 0.95;
+    filter: alpha(opacity=95);
+    margin-top: 40px;
+    padding: auto;
+}
+
+#applicanttype {
+    color: #777777;
+    padding-bottom: 20px;
+    text-align: right;
+}
+
+#applydiv {
+    text-align: center;
+}
+
+#applydiv .btn {
+    min-width: 180px;
+    margin-bottom: 5px;
+}
+
+#loginpanel .panel-footer {
+    text-align: center;
+}
+
+#loginpanel .panel-footer .btn {
+    margin-bottom: 5px;
+}
+
+#buttons .btn {
+    margin-bottom: 5px;
+}
+
+#reprintpanel {
+    opacity: 0.95;
+    filter: alpha(opacity=95); /* For IE8 and earlier */    
+}
+
+#reprintpanel .noreprint {
+    display: none;
+}
+
+#examdates th, #examdates td {
+    text-align: center;
+}
+
+div .col-sm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh;
+    margin: auto;
+}
+
+/* custom bootstrap styles */
+
+.form-horizontal .control-label {
+    text-align: left;
+    font-weight: normal;
+}
+
+.navbar {
+    background-color: #b60000;
+    color: white;
+}
+
+#buttons .btn {
+    min-width: 100px;
+}
+
+@media print  {
+    .modal {
+        display: none !important;
+    }
+}
+
+.navbar-inverse .navbar-nav > li > a, .navbar-inverse .navbar-brand{
+    color: white;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+a:active {
+    text-decoration: none;
+}
+
+.modal-header {
+      background-color: #b60000;
+      color:white !important;
+}
+
+#txtCourse option:disabled {
+    display:none;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.fpPortrait {
+    width: 78px;
+    height: 100px;
+    background-image: url("../img/preview/photo.jpg?v2");
+    background-color: #ffffff; 
+    background-position: center; 
+    background-repeat: no-repeat;
+}
+
+.fpLandscape {
+    width: 129px;
+    height: 100px;
+    background-image: url("../img/preview/photo.jpg?v2");
+    background-color: #ffffff; 
+    background-position: center; 
+    background-repeat: no-repeat;  
+}
+
+.fpSquare {
+    width: 100px;
+    height: 100px;
+    background-image: url("../img/preview/photo.jpg?v2");
+    background-color: #ffffff; 
+    background-position: center; 
+    background-repeat: no-repeat;
+}
+
+.img-optional {
+    border-style: dashed !important;
+    background-image: url("../img/preview/photooptional.jpg?v2");  
+}
+
+.img-error {  
+    border-color: #a94442;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset, 0px 0px 8px rgba(169, 68, 66, 0.5);    
+}
+
+.pagebuttons .btn {
+    min-width: 100px;
+}
+
+@media print {
+    .btn {
+        display: none;
+    }
+    
+    .noprint {
+        display: none;
+    }
+}
+
+
+.plain {
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    background-color: transparent !important;
+}
+
+.fileicon {
+    margin-top: 5px;
+    margin-left: 2px;
+}
+
+.debug {
+    height: 200px;
+    overflow: scroll;
+}
+
+.nstp:hover {
+    background-color: #f5f5f5 !important;
+}
+
+.nstp.success {
+    background-image: url("../img/check.png?v2");
+    background-position: left 10px bottom 8px; 
+    background-repeat: no-repeat;
+}
+
+.nstp.success:hover {
+    background-color: #dff0d8 !important;
+}
+
+.PEFBUTTONS {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+}
+
+
+.PEF td, .PEF th  {
+    padding: 4px;
+    border: 1px solid #999999;    
+    border-collapse: collapse;
+}
+
+table.PEF, tr.PEF {
+    border: 2px solid #111111 !important;
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom:10px;
+}
+
+.PEF tr td:last-child,
+.PEF tr th:last-child   {
+    border-right: 2px solid #111111 !important;     
+}
+
+.PEF tr th {
+    border-bottom: 2px solid #111111 !important;  
+}
+
+.modal-dialog{
+    overflow-y: initial !important
+}
+.modal-body{
+    max-height: 80vh;
+    overflow-y: auto;
+    margin-bottom: 10px;
+}
+
+.GSFORM {
+    margin: 4px;
+}
+
+.GSFORM td {
+    padding: 4px;
+}
+
+.GSFORM .GSFIELD {
+    border-bottom: 1px solid #999999;
+}
+
+.GSFORM td:first-child {
+    width: 30px;
+    border: none;
+}
+
+
+.GSFORMSCHOOLS td {
+    padding: 4px;
+    font-size: 8pt;
+}
+
+.GSFORMSCHOOLS .GSFIELD {
+    border-bottom: 1px solid gray;
+}
+
+.GSFORMSCHOOLS td:first-child {
+    width: 40px;
+    border: none;
+}
+
+option.separator {
+    margin-top:8px;
+    border-top:1px solid #666 !important;
+    padding:0;
+}
+
+.btn {
+    margin-bottom: 5px;
+    border-radius: 8px;
+}
+
+.savecompleted ttd {
+    word-wrap: break-word !important;
+}

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+
+            <title>UE Online Application for Admission</title>
+
+            <!-- Bootstrap core CSS -->
+            <link href="./UE Online Application for Admission_files/bootstrap.min.css" rel="stylesheet">
+
+            <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+            <link href="./UE Online Application for Admission_files/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+            <!-- Custom styles for this template -->
+            <link href="./UE Online Application for Admission_files/sticky-footer-navbar.css" rel="stylesheet">
+            <link href="./UE Online Application for Admission_files/full-width-pics.css" rel="stylesheet">
+
+            <script language="javascript" src="./UE Online Application for Admission_files/ajaxhandler.js.download"></script>
+            <script language="javascript" src="./UE Online Application for Admission_files/admission.js.download"></script>
+            <script language="javascript" src="./UE Online Application for Admission_files/md5.js.download"></script>
+            <script language="javascript" src="./UE Online Application for Admission_files/base64.js.download"></script>
+
+            <link href="main.css" rel="stylesheet">
+
+            <link rel="stylesheet" type="text/css" href="./UE Online Application for Admission_files/stylecustom.css">
+            <link rel="stylesheet" type="text/css" href="./UE Online Application for Admission_files/jquery.Jcrop.css">
+
+            <meta property="og:title" content="UE Online Application for Admission">
+            <meta property="og:type" content="website">
+            <meta property="og:url" content="https://www.ue.edu.ph/onlineadmission?v=2023">
+            <meta property="og:image" content="https://www.ue.edu.ph/portals/common/img/ogp/uesocialogp.png">            
+    </head>
+
+    <body class="wall wall3">
+        <nav class="navbar navbar-inverse navbar-default navbar-fixed-top noprint">
+            <div class="container" id="navbar">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+                    <a class="navbar-brand" href="#" target="_uehome" id="navbar">University of the East</a>
+                </div>
+                <div class="collapse navbar-collapse" id="navbar">
+                    <ul class="nav navbar-nav navbar-right">
+                                                <li><a href="#" id="navbar">Courses</a></li>
+                        <li><a href="#" id="navbar">Assessment Dates</a></li>
+                        <li><a href="#" target="_uehome" id="navbar">Admissions</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container" id="BODY" style="cursor: default; border: none;"><div class="container">
+    <div class="row">
+        <div class="col-sm-9" style="margin: 5em 0 0 10em;">
+            <div class="panel panel-danger" id="loginpanel">
+                <div class="panel-heading text-center"><b>Welcome to UE!</b></div>
+                <div class="panel-body">
+                    <p class="text-center"><b>Thank you for your interest in becoming a <span style="color:#b60000">Warrior Student!</span> Cheers and we hope to welcome you to where your tomorrow should begin: in the East—the <span style="color:#b60000">University of the East!</span></b></p>
+                        <hr>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <form class="form-horizontal" autocomplete="off">
+                                    <b>STEP 1: Application Form</b><br>
+                                    <div class="form-group">
+                                        <label for="txtType" class="col-sm-4 control-label">Apply for</label>
+                                        <div class="col-sm-7">
+                                            <select class="form-control" id="txtType" name="txtType" onfocus="$(&#39;.kbd&#39;).addClass(&#39;hidden&#39;)" onchange="if ($(&#39;#txtType :selected&#39;).text() == &#39;&#39;) {$(&#39;#btnApply&#39;).attr(&#39;disabled&#39;,true);} else {if (($(&#39;#txtType :selected&#39;).text()==&#39;College&#39;)||($(&#39;#txtType&#39;).val()==&#39;shs&#39;)) {$(&#39;#step2,.cbtn&#39;).removeClass(&#39;hidden&#39;); $(&#39;#step2gs,#step2gsdent&#39;).addClass(&#39;hidden&#39;);} else if ($(&#39;#txtType&#39;).val()==&#39;gs&#39;) {$(&#39;#step2,#step2gsdent,.cbtn&#39;).addClass(&#39;hidden&#39;); $(&#39;#step2gs&#39;).removeClass(&#39;hidden&#39;)} else if ($(&#39;#txtType&#39;).val()==&#39;gsdent&#39;) {$(&#39;#step2,#step2gs,.cbtn&#39;).addClass(&#39;hidden&#39;);$(&#39;#step2gsdent&#39;).removeClass(&#39;hidden&#39;);} else $(&#39;#step2,#step2gs,#step2gsdent,.cbtn&#39;).addClass(&#39;hidden&#39;); $(&#39;#btnApply&#39;).attr(&#39;disabled&#39;,false);}">
+                                    <option value="0" selected="">College</option>
+                                    <option value="shs">Senior High School</option>
+                                    <option value="bedH">Junior High School (Grade 7-10)</option><option value="bedY">Elementary (Grade 1-6)</option><option value="bedK">Kinder</option><option disabled="" class="separator">------------------------------------&nbsp;&nbsp;</option><option value="gs">Graduate School</option>
+                                    <option value="gsdent">Graduate Dentistry Program</option>
+                                  </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-sm-7 col-sm-offset-4">
+                                            <input id="btnApply" type="button" value="Register to Apply" class="btn btn-danger" onclick="js_apply($(&#39;#txtType&#39;).val())" '="">
+                                </div>
+                              </div>
+                              <div style="border: 1px solid #cccccc; padding: 5px;">
+                                <p>To modify your application form <span class="cbtn">and upload your proof of payment</span>, please enter your reference number and last name below:</p>
+                                <div class="form-group">
+                                  <label for="txtReferenceNumber" class="col-sm-4 control-label">Reference No.<span id="spnReferenceNumber" style="display:none">*</span></label>
+                                  <div class="col-sm-7">
+                                    <input value="" type="number" class="form-control" id="txtReferenceNumber" name="txtReferenceNumber" placeholder="Reference Number" onfocus="$(&#39;.kbd&#39;).addClass(&#39;hidden&#39;)">
+                                    <a href="#"><small>Forgot my reference number</small></a><br>
+                                  </div>
+                                </div>  
+                                <div class="form-group">
+                                  <label for="txLastname" class="col-sm-4 control-label">Last Name<span id="spnLastname" style="display:none">*</span></label>
+                                  <div class="col-sm-7">
+                                    <input value="" type="text" class="form-control" id="txtLastname" name="txtLastname" placeholder="Last Name" onfocus="$(&#39;.kbd&#39;).addClass(&#39;hidden&#39;);$(this).next(&#39;.kbd&#39;).removeClass(&#39;hidden&#39;)">
+                                    <span class="kbd hidden" data-char="Ñ" title="Paste Ñ Character" onclick="$(this).prev(&#39;input[type=text]&#39;).val($(this).prev(&#39;input[type=text]&#39;).val()+$(this).data(&#39;char&#39;)).focus()"><i class="fa fa-keyboard-o"></i> <b class="label label-danger">Ñ</b></span>
+                                  </div>
+                                </div>  
+                              
+                            <input type="button" value="Edit" class="btn btn-danger btn-xs" title="Login to edit application">
+                            <input type="button" value="Reprint" class="btn btn-success  btn-xs" title="Reprint">
+                            <input type="button" value="Upload Proof of Payment" class="btn btn-info  btn-xs cbtn" title="Login to upload Application Fee proof of payment">
+                            <input type="button" value="Set Exam Date" class="btn btn-warning btn-xs cbtn" title="Login to set examination date">
+                            </div>
+                          </form>
+
+                        </div>
+                        <div class="col-sm-6" id="step2">
+                        <b>STEP 2: Enrollment</b><br>
+                            <b>Academic Credentials and Other Requirements</b><br>
+                            <ul>
+                            <li><a href="#">Update Personal Information</a></li>
+                            <li><a href="#">Submission of Enrollment Credentials</a></li>
+                            </ul>
+                            <b>Enrollment Status</b>      
+                            <ul>
+                            <li><a href="#">View Pre-Enrollment Form (PEF)</a></li>
+                            <li>Check your email for more info</li>
+                            </ul>   
+                        <b>STEP 3: Payment of Fees</b><br>
+                        <ul>
+                        <li><a href="#">Payment Procedures</a></li>
+                        <ul>
+                          <li><a href="#">PNB</a> over-the-counter</li>
+                          <li><a href="#">GCash</a>, Bancnet ATM, Online Banking</li>
+                        </ul>
+                        <li><a href="#">Download Registration Form (pdf)</a><br><span style="font-size:80%">(Within three working days after sending your proof of payment to the <a href="#">UE Finance Department</a>)</span></li>
+                        </ul>
+                        <b><a href="#">STEP 4: UE Student Portal Access</a></b><br>  
+                        </div>
+
+                    </div>
+                </div>
+                <div class="panel-footer">
+                <a href="#">UE Data Privacy Statement</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div></div>
+
+        <script>
+            $(document).ready(function() {
+                js_buildbody();
+
+                $("body").keypress(function(evt) {
+                    var charCode = evt.charCode || evt.keyCode;
+                    if (charCode == 13) {
+                        return false;
+                    }
+                });
+            });
+        </script>
+        <div class="cropme" style="width:1px;height:1px;display:none" id="cropper"></div>
+    
+
+    <input type="file" id="fileInput" name="files[]" accept="image/*"><canvas id="myCanvas" style="display:none;"></canvas><div id="modal"></div><div id="preview"><div class="buttons"><div class="switch btn btn-info" title="Switch Aspect Ratio"><i class="glyphicon glyphicon-repeat"></i></div><div class="cancel btn btn-danger"><i class="glyphicon glyphicon-remove"></i></div><div class="ok btn btn-success"><i class="glyphicon glyphicon-ok"></i></div></div></div></body></html>
